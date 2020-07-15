@@ -24,7 +24,7 @@ Note versioni e oggetti utilizzati:
 - opencv-python        4.2.0.34
 - PyQt5                5.15.0
 - termcolor            1.1.0
-
+ciao
 '''
 
 def file_immagine_valido(file_immagine: Path):
