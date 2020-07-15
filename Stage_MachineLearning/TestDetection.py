@@ -4,7 +4,7 @@ import os
 
 from datetime import datetime
 
-from colorama import init 
+from colorama import init
 from termcolor import colored
 
 from tkinter.filedialog import askdirectory
