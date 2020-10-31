@@ -1,3 +1,4 @@
+import datetime
 import math
 
 class Punto:
@@ -40,7 +41,5 @@ class Punto:
         return "x: {}, y: {}".format(self.x, self.y)
     
 if __name__ == '__main__':
-    
-    p = Punto()
-
-    print(p.distanza(Punto()))
+    a = datetime.datetime.now()
+    print(a.strftime('%c'))
