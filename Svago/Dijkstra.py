@@ -106,7 +106,9 @@ Per la strutture della matrice su file:
     - Non dimenticare i nomi dei nodi
 '''
 
-matrice, controlli = carica_file("path per i dati nome file: dati_Dijkstra.txt")
+PATH = 'E:\Programmazione\Python\Svago\dati_Dijkstra.txt'
+
+matrice, controlli = carica_file(PATH)
 
 for x in range(len(matrice)):
 
