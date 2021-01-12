@@ -2,6 +2,7 @@ from imageai.Detection.keras_retinanet.utils.image import VisualEffect
 from telepot import *
 from telepot.loop import MessageLoop
 from imageai.Detection import ObjectDetection, VideoObjectDetection
+from pathlib import Path
 import os
 from datetime import date, datetime
 
@@ -61,6 +62,18 @@ def on_message(messaggio: dict):
 
             bot.sendMessage(text = "Invia una immagine o un video e cercherò di indovinare cosa c'è!", chat_id = chat_id)
 
+def controlla_paths():
+
+    paths = ['//Immagini', '//Video', '//Immagini//Originali', '//Immagini//Processate', '//Video//Originali', '//Video//Processati']
+
+    for path in paths:
+
+        path = Path(str(Path.cwd()) + path)
+
+        if not path.exists():
+
+            path.mkdir()
+
 image_detector = ObjectDetection()
 image_detector.setModelTypeAsYOLOv3()
 image_detector.setModelPath(MODEL_PATH)
@@ -71,4 +84,5 @@ video_detector.setModelTypeAsYOLOv3()
 video_detector.setModelPath(MODEL_PATH)
 video_detector.loadModel(detection_speed="fast")
 
-MessageLoop(handle = bot.message_loop(run_forever = True, callback = on_message)).run_as_thread()
+#MessageLoop(handle = bot.message_loop(run_forever = True, callback = on_message)).run_as_thread()
+controlla_paths()
